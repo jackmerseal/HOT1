@@ -1,0 +1,35 @@
+﻿@model OrderForm
+@{
+	Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<h3>Crazy Crank's T-Shirt Factory</h3>
+	<subtitle>OrderForm</subtitle>
+	<form asp-action="Order" method="post">
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div>
+			<label asp-for="Quantity" class="form-label">Quantity:</label>
+			<input asp-for="Subtotal" class="form-control" />
+		</div>
+		<div>
+			<label class="form-label">15% tip:</label>
+			<input value="" readonly />
+		</div>
+		<div>
+			<label class="form-label">20% tip:</label>
+			<input value="" readonly />
+		</div>
+		<div>
+			<label class="form-label">25% tip:</label>
+			<input value="" readonly />
+		</div>
+		<button type="submit" class="btn btn-primary">Calculate</button>
+		<a asp-action="Index" class="btn btn-secondary">Clear</a>
+	</form>
+</body>
+</html>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using HOT1.Models;
+using HOT1P2.Models;
 namespace HOT1.Controllers
 {
 	public class OrderFormController : Controller
@@ -17,7 +17,7 @@ namespace HOT1.Controllers
 		{
 			if(ModelState.IsValid)
 			{
-
+				ViewBag.SUBTOTAL = model.GetSubtotal();
 			}
 			else
 			{
