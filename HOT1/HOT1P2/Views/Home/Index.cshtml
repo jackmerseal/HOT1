@@ -1,35 +1,36 @@
 ﻿@model OrderForm
 @{
-	Layout = "_Layout";
+    Layout = "_Layout";
 }
+
 <!DOCTYPE html>
 <html>
 <body>
-	<h3>Crazy Crank's T-Shirt Factory</h3>
-	<subtitle>OrderForm</subtitle>
-	<div class="container mt-3">
-		<form asp-action="Index" method="post">
-
-			<div class="col mt-3">
-				<label asp-for="Quantity" class="form-label">Quantity:</label>
-				<input asp-for="Quantity" class="form-control" />
-			</div>
-			<div class="col mt-3">
-				<label asp-for="DiscountCode" class="form-label">Discount Code:</label>
-				<input asp-for="DiscountCode" class="form-control" />
-				<span asp-validation-for="DiscountCode" class="text-danger"></span>
-			</div>
-			<div class="col mt-3">
-				<button type="submit" class="btn btn-primary">Order</button>
-			</div>
-
-			<div class="col mt-3">
-				<output value = @ViewBag.SUBTOTAL></output>
-			</div>
-			
-			<a asp-action="Index" class="btn btn-secondary">Clear</a>
-		</form>
-	</div>
-	
+    <h3>Crazy Crank's T-Shirt Factory</h3>
+    <subtitle>OrderForm</subtitle>
+    <div class="container mt-3">
+        <form asp-action="Index" method="post">
+            <div class="col mt-3">
+                <label asp-for="Quantity" class="form-label">Quantity:</label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="col mt-3">
+                <label asp-for="DiscountCode" class="form-label">Discount Code:</label>
+                <input asp-for="DiscountCode" class="form-control" />
+                <span asp-validation-for="DiscountCode" class="text-danger"></span>
+            </div>
+            <div class="col mt-3">
+                <button type="submit" class="btn btn-primary">Order</button>
+            </div>
+            <div class="col mt-3">
+                <output>
+					<h3>Subtotal: @ViewBag.ST.ToString("C")</h3>
+					<h3>Tax: @ViewBag.T</h3>
+					<h3>Total: @ViewBag.TL</h3>
+                </output>               
+            </div>
+        </form>
+    </div>
 </body>
 </html>

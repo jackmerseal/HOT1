@@ -1,32 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HOT1P2.Models;
-using System.Diagnostics;
-namespace HOT1.Controllers
+
+namespace HOT1P2.Controllers
 {
 	public class OrderFormController : Controller
 	{
 		[HttpGet]
 		public IActionResult Index()
 		{
-			ViewBag.SUBTOTAL = 0;
-			ViewBag.TAX = 0;
-			ViewBag.TOTAL = 0;
 			return View();
 		}
+
 		[HttpPost]
 		public IActionResult Index(OrderForm model)
 		{
-			if(ModelState.IsValid)
+			if (ModelState.IsValid)
 			{
-				ViewBag.SUBTOTAL = model.GetSubtotal();
-				ViewBag.TAX = model.GetTax();
-				ViewBag.TOTAL = model.CalculateTotal();
+				ViewBag.ST = model.CalculateSubtotal();
+				ViewBag.T = model.CalculateTax();
+				ViewBag.TL = model.CalculateTotal();
 			}
 			else
 			{
-				ViewBag.SUBTOTAL = 0;
-				ViewBag.TAX = 0;
-				ViewBag.TOTAL = 0;
+				ViewBag.STL = 0;
+				ViewBag.T = 0;
+				ViewBag.TL = 0;
 			}
 			return View(model);
 		}
