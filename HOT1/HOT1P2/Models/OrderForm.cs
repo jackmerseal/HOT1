@@ -19,7 +19,7 @@ namespace HOT1P2.Models
 		}
 		public decimal? GetDiscount()
 		{
-			decimal discount = 0;
+			decimal discount;
 			if(DiscountCode == "6175")
 			{
 				discount = (decimal)(Subtotal * 0.30);

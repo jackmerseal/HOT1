@@ -15,7 +15,7 @@
 				<input asp-for="Quantity" class="form-control" />
 			</div>
 			<div class="col mt-3">
-				<label asp-for="DiscountCode" class="form-slabel">Discount Code:</label>
+				<label asp-for="DiscountCode" class="form-label">Discount Code:</label>
 				<input asp-for="DiscountCode" class="form-control" />
 				<span asp-validation-for="DiscountCode" class="text-danger"></span>
 			</div>
@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="col mt-3">
-				<output value ="@ViewBag.SUBTOTAL"></output>
+				<output value = @ViewBag.SUBTOTAL></output>
 			</div>
 			
 			<a asp-action="Index" class="btn btn-secondary">Clear</a>
