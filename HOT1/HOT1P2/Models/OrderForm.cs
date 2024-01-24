@@ -52,7 +52,7 @@ namespace HOT1P2.Models
 			decimal? total = 0;
 			for (int i = 0; i < discount; i++)
 			{
-				total = (decimal?)(Subtotal + tax);
+				Total = (int?)(decimal?)(Subtotal + tax);
 			}
 			return total;
 		}

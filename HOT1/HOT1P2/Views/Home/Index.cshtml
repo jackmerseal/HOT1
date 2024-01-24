@@ -4,32 +4,32 @@
 }
 <!DOCTYPE html>
 <html>
-<head>
-
-</head>
 <body>
 	<h3>Crazy Crank's T-Shirt Factory</h3>
 	<subtitle>OrderForm</subtitle>
-	<form asp-action="Order" method="post">
-		<div asp-validation-summary="All" class="text-danger"></div>
-		<div>
-			<label asp-for="Quantity" class="form-label">Quantity:</label>
-			<input asp-for="Subtotal" class="form-control" />
-		</div>
-		<div>
-			<label class="form-label">15% tip:</label>
-			<input value="" readonly />
-		</div>
-		<div>
-			<label class="form-label">20% tip:</label>
-			<input value="" readonly />
-		</div>
-		<div>
-			<label class="form-label">25% tip:</label>
-			<input value="" readonly />
-		</div>
-		<button type="submit" class="btn btn-primary">Calculate</button>
-		<a asp-action="Index" class="btn btn-secondary">Clear</a>
-	</form>
+	<div class="container mt-3">
+		<form asp-action="Index" method="post">
+
+			<div class="col mt-3">
+				<label asp-for="Quantity" class="form-label">Quantity:</label>
+				<input asp-for="Quantity" class="form-control" />
+			</div>
+			<div class="col mt-3">
+				<label asp-for="DiscountCode" class="form-slabel">Discount Code:</label>
+				<input asp-for="DiscountCode" class="form-control" />
+				<span asp-validation-for="DiscountCode" class="text-danger"></span>
+			</div>
+			<div class="col mt-3">
+				<button type="submit" class="btn btn-primary">Order</button>
+			</div>
+
+			<div class="col mt-3">
+				<output value ="@ViewBag.SUBTOTAL"></output>
+			</div>
+			
+			<a asp-action="Index" class="btn btn-secondary">Clear</a>
+		</form>
+	</div>
+	
 </body>
 </html>
